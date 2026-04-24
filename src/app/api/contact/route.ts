@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
 import { BUSINESS } from "@/lib/constants";
 
+export const runtime = "edge";
+
 export async function POST(req: NextRequest) {
   const data = await req.json();
   const { name, phone, zip, service, message } = data;
