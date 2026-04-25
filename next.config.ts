@@ -7,7 +7,7 @@ if (process.env.NODE_ENV === "development") {
 
 const nextConfig: NextConfig = {
   images: {
-    formats: ["image/webp", "image/avif"],
+    unoptimized: true,
   },
 };
 
