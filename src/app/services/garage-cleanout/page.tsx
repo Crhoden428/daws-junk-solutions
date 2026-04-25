@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import { CheckCircle, Phone, Clock, MapPin, Star } from "lucide-react";
 import { BookingForm } from "@/components/shared/BookingForm";
@@ -117,13 +116,9 @@ export default function GarageCleanoutPage() {
           <h2 className="font-display text-4xl text-center text-[#111111] mb-8">
             The Daw's Difference
           </h2>
-          <Image
-            src="/images/before-after-garage.jpg"
-            alt="Garage cleanout before and after in Pearland TX — Daw's Junk Solutions"
-            width={1200}
-            height={700}
-            className="rounded-2xl w-full shadow-lg"
-          />
+          <div className="rounded-2xl w-full shadow-lg bg-gray-100 border-2 border-dashed border-gray-300 flex flex-col items-center justify-center py-20">
+            <p className="text-gray-500 font-semibold">Before &amp; After Photo — Coming Soon</p>
+          </div>
           <p className="text-center text-sm text-gray-400 mt-3 italic">
             Real job — Shadow Creek Ranch, Pearland TX. Completed in under 2 hours.
           </p>

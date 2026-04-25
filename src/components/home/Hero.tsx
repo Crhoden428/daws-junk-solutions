@@ -1,23 +1,14 @@
 import Link from "next/link";
-import Image from "next/image";
-import { Phone, MessageSquare, CalendarCheck, Star } from "lucide-react";
+import { Phone, MessageSquare, Star } from "lucide-react";
 import { BUSINESS } from "@/lib/constants";
 import { BookingForm } from "@/components/shared/BookingForm";
 
 export function Hero() {
   return (
     <section className="relative bg-[#111111] text-white overflow-hidden">
-      {/* Background image with overlay */}
-      <div className="absolute inset-0">
-        <Image
-          src="/images/hero-truck.jpg"
-          alt="Daw's Junk Solutions truck and trailer in Pearland TX"
-          fill
-          className="object-cover opacity-30"
-          priority
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/30" />
-      </div>
+      {/* Background: geometric pattern for texture */}
+      <div className="absolute inset-0" style={{backgroundImage:"radial-gradient(circle at 1px 1px, rgba(255,255,255,0.04) 1px, transparent 0)", backgroundSize:"32px 32px"}} />
+      <div className="absolute inset-0 bg-gradient-to-br from-black/60 via-transparent to-orange-900/20" />
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
