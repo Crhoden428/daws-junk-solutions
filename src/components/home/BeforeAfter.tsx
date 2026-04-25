@@ -45,7 +45,7 @@ export function BeforeAfter() {
                 src={src}
                 alt={alt}
                 fill
-                className={`object-cover hover:scale-105 transition-transform duration-300${rotate ? " [transform:rotate(-90deg)_scale(1.4)]" : ""}`}
+                className={`object-cover hover:scale-105 transition-transform duration-300${rotate ? " scale-[1.4]" : ""}`}
               />
               <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/70 to-transparent p-3">
                 <p className="text-white text-xs font-semibold">{label}</p>
