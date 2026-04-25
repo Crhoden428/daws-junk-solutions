@@ -12,7 +12,9 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
           {/* Brand */}
           <div className="md:col-span-1">
-            <Image src="/logo.svg" alt="Daw's Junk Solutions" width={210} height={56} className="h-12 w-auto mb-4" />
+            <span className="bg-white rounded-lg px-3 py-1 inline-flex mb-4">
+              <Image src="/images/IMG_2885.jpeg" alt="Daw's Junk Solutions" width={150} height={56} className="h-12 w-auto object-contain" />
+            </span>
             <p className="text-sm leading-relaxed text-gray-400">
               Family-owned junk removal serving Pearland, TX and all of South Houston. Licensed, insured, and always upfront on price.
             </p>

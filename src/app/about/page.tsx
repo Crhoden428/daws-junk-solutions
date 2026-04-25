@@ -32,13 +32,13 @@ export default function AboutPage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              {/* Animated Daw placeholder — replace with illustrated/animated version */}
-              <div className="rounded-2xl bg-gray-100 aspect-square flex flex-col items-center justify-center text-center p-8 border-2 border-dashed border-gray-300">
-                <div className="text-6xl mb-4">🚛</div>
-                <p className="font-display text-2xl text-gray-400 mb-2">"Better Call Daw"</p>
-                <p className="text-sm text-gray-400">
-                  [Illustrated Daw character — coming soon]
-                </p>
+              <div className="rounded-2xl overflow-hidden shadow-xl aspect-square relative">
+                <Image
+                  src="/images/6E5414FC-6A5C-4419-BDB3-377B82CD14BC.png"
+                  alt="Daw — owner of Daw's Junk Solutions, Pearland TX"
+                  fill
+                  className="object-cover object-top"
+                />
               </div>
             </div>
 

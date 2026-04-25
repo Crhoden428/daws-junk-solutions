@@ -14,7 +14,9 @@ export function Header() {
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2" onClick={() => setOpen(false)}>
-            <Image src="/logo.svg" alt="Daw's Junk Solutions" width={200} height={48} className="h-10 w-auto" priority />
+            <span className="bg-white rounded px-2 py-0.5 inline-flex">
+              <Image src="/images/IMG_2885.jpeg" alt="Daw's Junk Solutions" width={130} height={40} className="h-9 w-auto object-contain" priority />
+            </span>
           </Link>
 
           {/* Desktop nav */}

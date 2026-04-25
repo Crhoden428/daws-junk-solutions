@@ -1,13 +1,13 @@
+import Image from "next/image";
 import Link from "next/link";
-import { Camera } from "lucide-react";
 
 const galleryItems = [
-  { label: "Tree & Debris Removal", detail: "Full trailer of logs — Pearland TX" },
-  { label: "Furniture Removal", detail: "Loaded flatbed — same-day service" },
-  { label: "Mattress & Furniture", detail: "RawMaxx trailer — estate cleanout" },
-  { label: "Commercial Cleanout", detail: "Parking lot debris — Pearland TX" },
-  { label: "Full Truck & Trailer", detail: "Daw's Junk Solutions rig — South Houston" },
-  { label: "Yard Waste Removal", detail: "Debris & logs hauled away" },
+  { src: "/images/IMG_2133.jpeg", alt: "Yard waste and tree debris removal — Daw's RawMaxx trailer loaded with logs", label: "Yard & Tree Debris Removal", rotate: false },
+  { src: "/images/IMG_2105.jpeg", alt: "Furniture and junk removal — loaded trailer", label: "Furniture & Junk Removal", rotate: true },
+  { src: "/images/IMG_2891.jpeg", alt: "Home cleanout — RawMaxx trailer loaded with mattresses and appliances", label: "Full Home Cleanout", rotate: false },
+  { src: "/images/IMG_2659.jpeg", alt: "Commercial junk removal Pearland TX — Daw's trailer on job site", label: "Commercial Junk Removal", rotate: true },
+  { src: "/images/IMG_2660.jpeg", alt: "Daw's Junk Solutions truck and trailer — Pearland TX service area", label: "Same-Day Service", rotate: true },
+  { src: "/images/IMG_2890.jpeg", alt: "Daw's Junk Solutions — white RAM truck and RawMaxx dump trailer", label: "Daw's Full Rig", rotate: false },
 ];
 
 export function BeforeAfter() {
@@ -25,23 +25,31 @@ export function BeforeAfter() {
 
         {/* Featured before/after */}
         <div className="mb-8">
-          <div className="rounded-2xl w-full shadow-lg bg-gray-100 flex flex-col items-center justify-center py-20 border-2 border-dashed border-gray-300">
-            <Camera size={48} className="text-gray-400 mb-4" />
-            <p className="text-gray-600 font-semibold text-lg">Before &amp; After — Garage Cleanout</p>
-            <p className="text-gray-400 text-sm mt-1">Shadow Creek Ranch, Pearland TX — Same-day service</p>
-          </div>
+          <Image
+            src="/images/ACC29CAC-B783-4D24-BE3B-E1CB0F20F008.png"
+            alt="Garage cleanout before and after — Daw's Junk Solutions Pearland TX"
+            width={1200}
+            height={700}
+            className="rounded-2xl w-full object-cover shadow-lg"
+          />
           <p className="mt-3 text-center text-sm text-gray-500 italic">
-            Full garage cleanout — Shadow Creek Ranch, Pearland TX. Same-day service.
+            Full garage cleanout — Pearland TX. Same-day service.
           </p>
         </div>
 
         {/* Gallery grid */}
         <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-          {galleryItems.map(({ label, detail }) => (
-            <div key={label} className="aspect-square overflow-hidden rounded-xl bg-gray-100 border border-gray-200 flex flex-col items-center justify-center gap-2 p-4">
-              <Camera size={28} className="text-gray-400" />
-              <p className="text-gray-700 font-semibold text-sm text-center">{label}</p>
-              <p className="text-gray-400 text-xs text-center">{detail}</p>
+          {galleryItems.map(({ src, alt, label, rotate }) => (
+            <div key={src} className="aspect-square overflow-hidden rounded-xl relative bg-gray-100">
+              <Image
+                src={src}
+                alt={alt}
+                fill
+                className={`object-cover hover:scale-105 transition-transform duration-300${rotate ? " [transform:rotate(90deg)_scale(1.4)]" : ""}`}
+              />
+              <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/70 to-transparent p-3">
+                <p className="text-white text-xs font-semibold">{label}</p>
+              </div>
             </div>
           ))}
         </div>
