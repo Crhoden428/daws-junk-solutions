@@ -19,10 +19,13 @@ export function BookingForm({ compact = false }: { compact?: boolean }) {
 
   async function onSubmit(data: FormData) {
     try {
-      const res = await fetch("/api/contact", {
+      const res = await fetch("https://formsubmit.co/ajax/crhoden428@gmail.com", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          ...data,
+          _subject: `New Lead: ${data.name} — ${data.service || "General Inquiry"}`,
+        }),
       });
       if (res.ok) setSubmitted(true);
       else setError(true);

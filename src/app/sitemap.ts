@@ -1,6 +1,8 @@
 import { MetadataRoute } from "next";
 import { BUSINESS, SERVICES, SERVICE_AREAS } from "@/lib/constants";
 
+export const dynamic = "force-static";
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = BUSINESS.domain;
   const now = new Date();
