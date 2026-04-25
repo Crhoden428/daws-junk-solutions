@@ -23,5 +23,9 @@
 		// Enable image optimization
 		// see https://opennext.js.org/cloudflare/howtos/image
 		"binding": "IMAGES"
-	}
+	},
+	"routes": [
+		{ "pattern": "dawsjunk.com/*", "zone_name": "dawsjunk.com" },
+		{ "pattern": "www.dawsjunk.com/*", "zone_name": "dawsjunk.com" }
+	]
 }
