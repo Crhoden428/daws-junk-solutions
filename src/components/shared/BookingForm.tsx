@@ -12,6 +12,9 @@ type FormData = {
   message: string;
 };
 
+const inputClass = "w-full rounded-lg border border-gray-300 px-4 py-3 text-sm text-gray-900 bg-white placeholder:text-gray-400 focus:border-orange-500 focus:outline-none";
+const labelClass = "block text-xs font-semibold text-gray-600 mb-1";
+
 export function BookingForm({ compact = false }: { compact?: boolean }) {
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState(false);
@@ -50,48 +53,59 @@ export function BookingForm({ compact = false }: { compact?: boolean }) {
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
       <div className="grid grid-cols-2 gap-3">
         <div>
+          <label className={labelClass}>Your Name *</label>
           <input
             {...register("name", { required: true })}
-            placeholder="Your name *"
-            className="w-full rounded-lg border border-gray-300 px-4 py-3 text-sm focus:border-orange-500 focus:outline-none"
+            placeholder="Jane Smith"
+            className={inputClass}
           />
           {errors.name && <p className="text-red-500 text-xs mt-1">Required</p>}
         </div>
         <div>
+          <label className={labelClass}>Phone Number *</label>
           <input
             {...register("phone", { required: true })}
-            placeholder="Phone number *"
+            placeholder="(281) 555-0000"
             type="tel"
-            className="w-full rounded-lg border border-gray-300 px-4 py-3 text-sm focus:border-orange-500 focus:outline-none"
+            className={inputClass}
           />
           {errors.phone && <p className="text-red-500 text-xs mt-1">Required</p>}
         </div>
       </div>
 
       <div className="grid grid-cols-2 gap-3">
-        <input
-          {...register("zip")}
-          placeholder="ZIP code"
-          className="w-full rounded-lg border border-gray-300 px-4 py-3 text-sm focus:border-orange-500 focus:outline-none"
-        />
-        <select
-          {...register("service")}
-          className="w-full rounded-lg border border-gray-300 px-4 py-3 text-sm text-gray-500 focus:border-orange-500 focus:outline-none"
-        >
-          <option value="">Service type...</option>
-          {SERVICES.map((s) => (
-            <option key={s.slug} value={s.name}>{s.name}</option>
-          ))}
-        </select>
+        <div>
+          <label className={labelClass}>ZIP Code</label>
+          <input
+            {...register("zip")}
+            placeholder="77584"
+            className={inputClass}
+          />
+        </div>
+        <div>
+          <label className={labelClass}>Service Needed</label>
+          <select
+            {...register("service")}
+            className={inputClass}
+          >
+            <option value="">Select a service...</option>
+            {SERVICES.map((s) => (
+              <option key={s.slug} value={s.name}>{s.name}</option>
+            ))}
+          </select>
+        </div>
       </div>
 
       {!compact && (
-        <textarea
-          {...register("message")}
-          placeholder="Describe what you need hauled (optional)"
-          rows={3}
-          className="w-full rounded-lg border border-gray-300 px-4 py-3 text-sm focus:border-orange-500 focus:outline-none resize-none"
-        />
+        <div>
+          <label className={labelClass}>Details (optional)</label>
+          <textarea
+            {...register("message")}
+            placeholder="Describe what you need hauled — size, location, anything helpful"
+            rows={3}
+            className={inputClass + " resize-none"}
+          />
+        </div>
       )}
 
       <button
