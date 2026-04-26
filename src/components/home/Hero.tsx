@@ -12,10 +12,10 @@ export function Hero() {
           src="/images/IMG_2890.jpeg"
           alt="Daw's Junk Solutions truck and RawMaxx trailer in Pearland TX"
           fill
-          className="object-cover object-center opacity-40"
+          className="object-cover object-right opacity-50"
           priority
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/60 to-black/30" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/85 to-black/20" />
       </div>
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 lg:py-24">

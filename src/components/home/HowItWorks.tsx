@@ -30,12 +30,8 @@ export function HowItWorks() {
         <div className="grid md:grid-cols-3 gap-8">
           {steps.map((step, i) => (
             <div key={step.number} className="relative">
-              {/* connector line */}
-              {i < steps.length - 1 && (
-                <div className="hidden md:block absolute top-8 left-full w-full h-px bg-orange-600/30 -translate-x-8 z-0" />
-              )}
               <div className="relative z-10">
-                <div className="font-display text-6xl text-orange-600/30 leading-none mb-2">{step.number}</div>
+                <div className="font-display text-6xl text-orange-500 leading-none mb-2">{step.number}</div>
                 <h3 className="text-xl font-bold mb-3">{step.title}</h3>
                 <p className="text-gray-400 leading-relaxed">{step.desc}</p>
               </div>
