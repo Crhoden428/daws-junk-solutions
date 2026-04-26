@@ -19,7 +19,7 @@ export function BookingForm({ compact = false }: { compact?: boolean }) {
 
   async function onSubmit(data: FormData) {
     try {
-      const res = await fetch("https://formsubmit.co/ajax/crhoden428@gmail.com", {
+      const res = await fetch("https://formsubmit.co/ajax/dawsjunksolutions@gmail.com", {
         method: "POST",
         headers: { "Content-Type": "application/json", Accept: "application/json" },
         body: JSON.stringify({
