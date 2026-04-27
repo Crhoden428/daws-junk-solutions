@@ -124,7 +124,7 @@ export function BookingForm({ compact = false }: { compact?: boolean }) {
       )}
 
       <p className="text-center text-xs text-gray-400">
-        We respond within minutes during business hours.
+        We'll get back to you ASAP!
       </p>
     </form>
   );
